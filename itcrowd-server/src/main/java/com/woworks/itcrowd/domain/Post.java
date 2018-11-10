@@ -66,10 +66,4 @@ public class Post {
     @Field("downVotes")
     private List<ObjectId> downVotes;
 
-
-    @Field("comments")
-    private List<Comment> comments = new ArrayList<>();
-
-
-
 }
