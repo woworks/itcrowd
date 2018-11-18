@@ -1,0 +1,21 @@
+<a href="/books/new" style="font-family: Roboto; font-size: 1.2em; padding-bottom: 10px">Add New Book</a>
+<p-table [value]="books">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Genres</th>
+      <th>Edit</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-book>
+    <tr>
+      <td>{{book.id}}</td>
+      <td>{{book.title}}</td>
+      <td>{{book.author.name}}</td>
+      <td><span *ngFor="let genre of book.genres" >{{genre.name}}, </span> </td>
+      <td><a href="/books/{{book.id}}">Edit book</a></td>
+    </tr>
+  </ng-template>
+</p-table>

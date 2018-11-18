@@ -1,0 +1,47 @@
+<div>
+
+</div>
+
+<main role="main" class="container">
+
+  <div>
+    <h1>Edit book</h1>
+  </div>
+
+  <!-- Book edition -->
+    <h3>Book Info:</h3>
+    <span>
+            <div class="form-group">
+                <label>ID:</label>
+                <input disabled="disabled" type="text" pInputText [(ngModel)]="book.id" class="form-control" style="background-color: #dddddd"/>
+            </div>
+
+            <div class="form-group">
+                <label for="holder-input">Title:</label>
+                <input id="holder-input" name="title" type="text" [(ngModel)]="book.title" value="War and peace"
+                       class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="holder-input">Author:</label>
+                <p-dropdown [options]="authors" [(ngModel)]="book.author" optionLabel="name"
+                            placeholder="Select an Author" [style]="{'width':'100%'}"
+                            class="form-control"></p-dropdown>
+            </div>
+
+            <div class="form-group">
+              <label for="holder-input">Genres:</label>
+                <div *ngFor="let genre of genres" style="padding-top: 5px; font-family:'Roboto'">
+                  <p-checkbox name="genresGroup" value="{{genre.id}}" label="{{genre.name}}"
+                              [(ngModel)]="selectedGenres" (onChange)="toggleGenre($event)"></p-checkbox>
+                </div>
+            </div>
+
+            <div class="form-group" style="text-align: right">
+                <button type="button" (click)="cancel()" style="margin-right: 2em">Cancel</button>
+                <button type="submit" (click)="saveBook()">Save</button>
+            </div>
+        </span>
+
+
+</main>
