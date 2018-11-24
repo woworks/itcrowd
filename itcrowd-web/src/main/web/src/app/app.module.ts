@@ -16,6 +16,14 @@ import { ErrorInterceptor } from "./shared/helpers/error.interceptor";
 import { HeaderComponent } from './shared/components/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { TopPostRowComponent } from './home/top-post-row/top-post-row.component';
+import { RecentPostsComponent } from './home/recent-posts/recent-posts.component';
+import { MainBlockComponent } from './home/main-block/main-block.component';
+import { FeaturedPostsComponent } from './home/featured-posts/featured-posts.component';
+import { BottomBlockComponent } from './home/bottom-block/bottom-block.component';
+import { PostCardComponent } from './shared/components/post-card/post-card.component';
+import { PostCardBigComponent } from './shared/components/post-card-big/post-card-big.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +33,15 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    TopPostRowComponent,
+    RecentPostsComponent,
+    MainBlockComponent,
+    FeaturedPostsComponent,
+    BottomBlockComponent,
+    PostCardComponent,
+    PostCardBigComponent,
+    SignupComponent
   ],
   imports: [
     AppRoutingModule,

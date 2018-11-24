@@ -24,8 +24,12 @@
 
         <!-- search & aside toggle -->
         <div class="nav-btns">
-          <button class="aside-btn"><i class="fa fa-bars"></i></button>
+          <!--<button class="aside-btn"><i class="fa fa-bars"></i></button>-->
           <button class="search-btn"><i class="fa fa-search"></i></button>
+          <a href="/login"><button class="login-btn"><i class="fa fa-user"></i></button>Login</a>
+          <a href="/signup"><button class="signup-btn"><i class="fa fa-user-circle"></i></button>Sign Up</a>
+          <span>Hi {{currentUser?.username}}!<button class="signup-btn" (click) ="logout()"><i class="fa fa-user-circle"></i></button>Logout</span>
+
           <div class="search-form">
             <input class="search-input" type="text" name="search" placeholder="Enter Your Search ...">
             <button class="search-close"><i class="fa fa-times"></i></button>

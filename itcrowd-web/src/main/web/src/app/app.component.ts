@@ -19,17 +19,19 @@ export class AppComponent {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       console.log(event.url);
-      let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+/*      let currentUser = this.authenticationService.getCurrentUser();
       if (currentUser){
         this.userName = currentUser.username;
       } else {
         this.userName = '';
-      }
+      }*/
     });
   }
 
+/*
   logout() {
     console.log('clearing currentUser');
     this.authenticationService.logout();
   }
+*/
 }

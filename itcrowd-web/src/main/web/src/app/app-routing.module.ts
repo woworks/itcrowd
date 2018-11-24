@@ -5,10 +5,12 @@ import { BooksComponent } from "./books/books.component";
 import { LoginComponent } from "./login/login.component";
 import { AuthGuard } from "./shared/guards/auth.guard";
 import { HomeComponent } from "./home/home.component";
+import {SignupComponent} from "./signup/signup.component";
 
 const routes: Routes = [
   { path: '' , component: HomeComponent},
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   {
     path: 'books',
     children: [
