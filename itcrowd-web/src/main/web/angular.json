@@ -30,12 +30,15 @@
               "../web/node_modules/primeng/resources/themes/omega/theme.css",
               "src/assets/css/bootstrap.min.css",
               "src/assets/css/font-awesome.min.css",
-              "src/assets/css/style.css"
+              "src/assets/css/style.css",
+              "../web/node_modules/quill/dist/quill.core.css",
+              "../web/node_modules/quill/dist/quill.snow.css"
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",
               "src/assets/js/bootstrap.min.js",
-              "src/assets/js/main.js"
+              "src/assets/js/main.js",
+              "../web/node_modules/quill/dist/quill.js"
             ]
           },
           "configurations": {

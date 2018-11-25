@@ -52,8 +52,9 @@ public class Post {
     @Field("authorUsername")
     private String authorUsername;
 
-    @Field("categories")
-    private List<String> categories;
+    @NotBlank
+    @Field("category")
+    private String categories;
 
     @Field("tags")
     private List<String> tags;

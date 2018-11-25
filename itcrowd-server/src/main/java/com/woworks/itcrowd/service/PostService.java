@@ -10,7 +10,7 @@ public interface PostService {
 
     List<Post> getLastPosts();
 
-    void insertPost(Post post);
+    Post save(Post post);
 
     Optional<Post> getPostById(ObjectId id);
 

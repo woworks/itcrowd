@@ -18,44 +18,86 @@ export class RecentPostsComponent implements OnInit {
       {
         id: '1',
         title: 'This is the title number One',
-        date: new Date(),
+        createdDate: new Date(),
+        modifiedDate: new Date(),
         body: 'one one one',
-        category: 'CategoryOne'
+        category: 'CategoryOne',
+        tags: ['one', 'two', 'three'],
+        authorName: 'Admin Administrator',
+        authorUsername: 'admin',
+        views: 0,
+        upVotes: 0,
+        downVotes: 0
       },
       {
         id: '2',
         title: 'This is the title number Two',
-        date: new Date(),
+        createdDate: new Date(),
+        modifiedDate: new Date(),
         body: 'one one one',
-        category: 'CategoryTwo'
+        category: 'CategoryTwo',
+        tags: ['one', 'two', 'three'],
+        authorName: 'Admin Administrator',
+        authorUsername: 'admin',
+        views: 0,
+        upVotes: 0,
+        downVotes: 0
       },
       {
         id: '3',
         title: 'This is the title number Three',
-        date: new Date(),
+        createdDate: new Date(),
+        modifiedDate: new Date(),
         body: 'one one one',
-        category: 'CategoryThree'
+        category: 'CategoryThree',
+        tags: ['one', 'two', 'three'],
+        authorName: 'Admin Administrator',
+        authorUsername: 'admin',
+        views: 0,
+        upVotes: 0,
+        downVotes: 0
       },
       {
         id: '4',
         title: 'This is the title number Four',
-        date: new Date(),
+        createdDate: new Date(),
+        modifiedDate: new Date(),
         body: 'one one one',
-        category: 'CategoryFour'
+        category: 'CategoryFour',
+        tags: ['one', 'two', 'three'],
+        authorName: 'Admin Administrator',
+        authorUsername: 'admin',
+        views: 0,
+        upVotes: 0,
+        downVotes: 0
       },
       {
         id: '5',
         title: 'This is the title number Five',
-        date: new Date(),
+        createdDate: new Date(),
+        modifiedDate: new Date(),
         body: 'one one one',
-        category: 'CategoryFive'
+        category: 'CategoryFive',
+        tags: ['one', 'two', 'three'],
+        authorName: 'Admin Administrator',
+        authorUsername: 'admin',
+        views: 0,
+        upVotes: 0,
+        downVotes: 0
       },
       {
         id: '6',
         title: 'This is the title number Six',
-        date: new Date(),
+        createdDate: new Date(),
+        modifiedDate: new Date(),
         body: 'one one one',
-        category: 'CategorySix'
+        category: 'CategorySix',
+        tags: ['one', 'two', 'three'],
+        authorName: 'Admin Administrator',
+        authorUsername: 'admin',
+        views: 0,
+        upVotes: 0,
+        downVotes: 0
       },
     ];
   }

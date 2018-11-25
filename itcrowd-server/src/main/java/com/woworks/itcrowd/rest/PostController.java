@@ -20,17 +20,12 @@ public class PostController {
     }
 
     @GetMapping("api/posts")
-    public List<Post> listBooks() {
+    public List<Post> listPosts() {
          return postService.getLastPosts();
     }
 
-    @GetMapping("api/posts/{id}")
-    public Post editBooks(@PathVariable ObjectId id) {
-            return postService.getPostById(id).orElseThrow(NotFoundException::new);
-    }
-
-    @PostMapping(value = "api/books/{id}")
-    public void editBook(@PathVariable Long id, @RequestBody Post post) {
-        this.postService.insertPost(post);
+    @PostMapping("api/posts")
+    public Post savePost(@RequestBody Post post) {
+            return this.postService.save(post);
     }
 }

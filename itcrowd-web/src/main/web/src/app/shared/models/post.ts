@@ -1,7 +1,14 @@
 export class Post {
   id: string;
   title: string;
-  date: Date;
   body: string;
+  createdDate: Date;
+  modifiedDate: Date;
   category: string;
+  tags: string[];
+  authorName: string;
+  authorUsername: string;
+  views: number;
+  upVotes: number;
+  downVotes: number;
 }

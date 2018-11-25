@@ -8,7 +8,7 @@ import { TableModule } from "primeng/table";
 import { AppRoutingModule } from "./app-routing.module";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
-import { CheckboxModule, DropdownModule } from "primeng/primeng";
+import { CheckboxModule, ChipsModule, DropdownModule, EditorModule } from "primeng/primeng";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LoginComponent } from './login/login.component';
 import { BasicAuthInterceptor } from "./shared/helpers/basic-auth.interceptor";
@@ -24,6 +24,9 @@ import { BottomBlockComponent } from './home/bottom-block/bottom-block.component
 import { PostCardComponent } from './shared/components/post-card/post-card.component';
 import { PostCardBigComponent } from './shared/components/post-card-big/post-card-big.component';
 import { SignupComponent } from './signup/signup.component';
+import { ViewPostComponent } from './posts/view-post/view-post.component';
+import { NewPostComponent } from './posts/new-post/new-post.component';
+import { PostFormComponent } from './posts/post-form/post-form.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { SignupComponent } from './signup/signup.component';
     BottomBlockComponent,
     PostCardComponent,
     PostCardBigComponent,
-    SignupComponent
+    SignupComponent,
+    ViewPostComponent,
+    NewPostComponent,
+    PostFormComponent
   ],
   imports: [
     AppRoutingModule,
@@ -52,7 +58,9 @@ import { SignupComponent } from './signup/signup.component';
     //primeng modules
     TableModule,
     DropdownModule,
-    CheckboxModule
+    CheckboxModule,
+    EditorModule,
+    ChipsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },

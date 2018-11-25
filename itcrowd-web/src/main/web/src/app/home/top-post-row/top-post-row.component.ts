@@ -16,16 +16,30 @@ export class TopPostRowComponent implements OnInit {
       {
         id: '1',
         title: 'This is the title number One',
-        date: new Date(),
+        createdDate: new Date(),
+        modifiedDate: new Date(),
         body: 'one one one',
-        category: 'CategoryOne'
+        category: 'CategoryOne',
+        tags: ['one', 'two', 'three'],
+        authorName: 'Admin Administrator',
+        authorUsername: 'admin',
+        views: 0,
+        upVotes: 0,
+        downVotes: 0
       },
       {
         id: '2',
         title: 'This is the title number Two',
-        date: new Date(),
+        createdDate: new Date(),
+        modifiedDate: new Date(),
         body: 'one one one',
-        category: 'CategoryTwo'
+        category: 'CategoryTwo',
+        tags: ['one', 'two', 'three'],
+        authorName: 'Admin Administrator',
+        authorUsername: 'admin',
+        views: 0,
+        upVotes: 0,
+        downVotes: 0
       }
       ];
   }

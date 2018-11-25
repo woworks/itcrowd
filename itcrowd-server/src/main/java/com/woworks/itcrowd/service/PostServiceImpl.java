@@ -5,6 +5,7 @@ import com.woworks.itcrowd.repository.PostRepository;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,8 +24,14 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public void insertPost(Post post) {
-        this.postRepository.insert(post);
+    public Post save(Post post) {
+/*        if (post.getCreatedDate() == null){
+            post.setCreatedDate(LocalDate.now());
+        }
+        if (post.getModifiedDate() != null){
+            post.setModifiedDate(LocalDate.now());
+        }*/
+        return this.postRepository.save(post);
     }
 
     @Override
