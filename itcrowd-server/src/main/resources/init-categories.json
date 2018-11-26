@@ -1,0 +1,72 @@
+[
+  {
+    "id": "5bfc11734257e93238cb88d6",
+    "_class": "com.woworks.itcrowd.domain.Category",
+    "code": "web",
+    "name": "Web Development",
+    "description": "Web development is the work involved in developing a web site for the Internet or an intranet. Web development can range from developing a simple single static page of plain text to complex web-based internet applications (web apps) electronic businesses, and social network services."
+  },
+  {
+    "id": "5bfc11734257e93238cb88d7",
+    "_class": "com.woworks.itcrowd.domain.Category",
+    "code": "javascript",
+    "name": "JavaScript",
+    "description": "JavaScript often abbreviated as JS, is a high-level, interpreted programming language"
+  },
+  {
+    "id": "5bfc11734257e93238cb88d8",
+    "_class": "com.woworks.itcrowd.domain.Category",
+    "code": "css",
+    "name": "CSS",
+    "description": "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML."
+  },
+  {
+    "id": "5bfc11734257e93238cb88d9",
+    "_class": "com.woworks.itcrowd.domain.Category",
+    "code": "linux",
+    "name": "Linux",
+    "description": "Linux is a family of free and open-source software operating systems built around the Linux kernel."
+  },
+  {
+    "id": "5bfc11734257e93238cb88da",
+    "_class": "com.woworks.itcrowd.domain.Category",
+    "code": "windows",
+    "name": "Windows",
+    "description": "Microsoft Windows is a group of several graphical operating system families, all of which are developed, marketed, and sold by Microsoft."
+  },
+  {
+    "id": "5bfc11734257e93238cb88db",
+    "_class": "com.woworks.itcrowd.domain.Category",
+    "code": "macos",
+    "name": "macOS",
+    "description": "macOS is a series of graphical operating systems developed and marketed by Apple Inc. since 2001. It is the primary operating system for Apple's Mac family of computers."
+  },
+  {
+    "id": "5bfc11734257e93238cb88dc",
+    "_class": "com.woworks.itcrowd.domain.Category",
+    "code": "java",
+    "name": "Java",
+    "description": "Java is a general-purpose computer-programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible."
+  },
+  {
+    "id": "5bfc11734257e93238cb88dd",
+    "_class": "com.woworks.itcrowd.domain.Category",
+    "code": "infosec",
+    "name": "Information security",
+    "description": "Information security, sometimes shortened to InfoSec, is the practice of preventing unauthorized access, use, disclosure, disruption, modification, inspection, recording or destruction of information."
+  },
+  {
+    "id": "5bfc11734257e93238cb88de",
+    "_class": "com.woworks.itcrowd.domain.Category",
+    "code": "android",
+    "name": "Android",
+    "description": "Android is a mobile operating system developed by Google, based on a modified version of the Linux kernel and other open source software and designed primarily for touchscreen mobile devices such as smartphones and tablets."
+  },
+  {
+    "id": "5bfc11734257e93238cb88df",
+    "_class": "com.woworks.itcrowd.domain.Category",
+    "code": "ios",
+    "name": "iOS",
+    "description": "iOS (formerly iPhone OS) is a mobile operating system created and developed by Apple Inc. exclusively for its hardware. It is the operating system that presently powers many of the company's mobile devices, including the iPhone, iPad, and iPod Touch."
+  }
+]
