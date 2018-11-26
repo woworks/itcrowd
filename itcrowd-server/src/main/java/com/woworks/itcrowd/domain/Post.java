@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Document(collection="posts")
@@ -24,7 +24,7 @@ public class Post {
 
     @NotBlank
     @Size(max=255)
-    @Indexed(unique=true)
+    @Indexed
     @Field("title")
     private String title;
 
@@ -35,12 +35,12 @@ public class Post {
     @NotBlank
     @Field("createdDate")
     @CreatedDate
-    private LocalDate createdDate;
+    private LocalDateTime createdDate;
 
     @NotBlank
     @Field("modifiedDate")
     @LastModifiedDate
-    private LocalDate modifiedDate;
+    private LocalDateTime modifiedDate;
 
     @NotBlank
     @Size(max=100)
@@ -54,7 +54,7 @@ public class Post {
 
     @NotBlank
     @Field("category")
-    private String categories;
+    private String category;
 
     @Field("tags")
     private List<String> tags;

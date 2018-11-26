@@ -25,12 +25,6 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public Post save(Post post) {
-/*        if (post.getCreatedDate() == null){
-            post.setCreatedDate(LocalDate.now());
-        }
-        if (post.getModifiedDate() != null){
-            post.setModifiedDate(LocalDate.now());
-        }*/
         return this.postRepository.save(post);
     }
 

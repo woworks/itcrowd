@@ -8,7 +8,7 @@ import { Post } from "../models/post";
 @Injectable({
   providedIn: 'root'
 })
-export class PostsService {
+export class PostService {
 
   private url = environment.api;
   private endpoint = 'posts';
@@ -16,7 +16,7 @@ export class PostsService {
   constructor(private httpClient: HttpClient) {
   }
 
-  list(): Observable<Post[]> {
+  getAll(): Observable<Post[]> {
     return this.httpClient
       .get<Post[]>(`${this.url}/${this.endpoint}`);
   }

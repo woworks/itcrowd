@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from "../../shared/services/posts.service";
+import { PostService } from "../../shared/services/post.service";
 import { Post } from "../../shared/models/post";
 import { ActivatedRoute } from "@angular/router";
 
@@ -12,7 +12,7 @@ export class ViewPostComponent implements OnInit {
 
   post: Post;
 
-  constructor(private postService: PostsService, private route: ActivatedRoute) {
+  constructor(private postService: PostService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {

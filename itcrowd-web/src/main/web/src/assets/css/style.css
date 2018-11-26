@@ -330,6 +330,13 @@ RESPONSIVE
      line-height: 20px;
      background: transparent;
 }
+.nav-btns > span {
+  padding: 25px 25px;
+  border: none;
+  line-height: 20px;
+  background: transparent;
+}
+
  .nav-btns .search-form {
      position: absolute;
      left: 0;
