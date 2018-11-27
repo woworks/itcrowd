@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Post} from "../../shared/models/post";
+import { PostService } from '../../shared/services/post.service';
 
 @Component({
   selector: 'app-recent-posts',
@@ -8,98 +9,15 @@ import {Post} from "../../shared/models/post";
 })
 export class RecentPostsComponent implements OnInit {
 
-  private recentPosts: Post[];
+  recentPosts: Post[];
 
-  constructor() {
+  constructor(private postService: PostService) {
   }
 
   ngOnInit() {
-    this.recentPosts = [
-      {
-        id: '1',
-        title: 'This is the title number One',
-        createdDate: new Date(),
-        modifiedDate: new Date(),
-        body: 'one one one',
-        category: 'CategoryOne',
-        tags: ['one', 'two', 'three'],
-        authorName: 'Admin Administrator',
-        authorUsername: 'admin',
-        views: 0,
-        upVotes: 0,
-        downVotes: 0
-      },
-      {
-        id: '2',
-        title: 'This is the title number Two',
-        createdDate: new Date(),
-        modifiedDate: new Date(),
-        body: 'one one one',
-        category: 'CategoryTwo',
-        tags: ['one', 'two', 'three'],
-        authorName: 'Admin Administrator',
-        authorUsername: 'admin',
-        views: 0,
-        upVotes: 0,
-        downVotes: 0
-      },
-      {
-        id: '3',
-        title: 'This is the title number Three',
-        createdDate: new Date(),
-        modifiedDate: new Date(),
-        body: 'one one one',
-        category: 'CategoryThree',
-        tags: ['one', 'two', 'three'],
-        authorName: 'Admin Administrator',
-        authorUsername: 'admin',
-        views: 0,
-        upVotes: 0,
-        downVotes: 0
-      },
-      {
-        id: '4',
-        title: 'This is the title number Four',
-        createdDate: new Date(),
-        modifiedDate: new Date(),
-        body: 'one one one',
-        category: 'CategoryFour',
-        tags: ['one', 'two', 'three'],
-        authorName: 'Admin Administrator',
-        authorUsername: 'admin',
-        views: 0,
-        upVotes: 0,
-        downVotes: 0
-      },
-      {
-        id: '5',
-        title: 'This is the title number Five',
-        createdDate: new Date(),
-        modifiedDate: new Date(),
-        body: 'one one one',
-        category: 'CategoryFive',
-        tags: ['one', 'two', 'three'],
-        authorName: 'Admin Administrator',
-        authorUsername: 'admin',
-        views: 0,
-        upVotes: 0,
-        downVotes: 0
-      },
-      {
-        id: '6',
-        title: 'This is the title number Six',
-        createdDate: new Date(),
-        modifiedDate: new Date(),
-        body: 'one one one',
-        category: 'CategorySix',
-        tags: ['one', 'two', 'three'],
-        authorName: 'Admin Administrator',
-        authorUsername: 'admin',
-        views: 0,
-        upVotes: 0,
-        downVotes: 0
-      },
-    ];
+    this.postService.getRecent(6).subscribe(data => {
+      this.recentPosts = data;
+    });
   }
 
 }

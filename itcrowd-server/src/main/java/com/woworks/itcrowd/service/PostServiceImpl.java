@@ -3,24 +3,42 @@ package com.woworks.itcrowd.service;
 import com.woworks.itcrowd.domain.Post;
 import com.woworks.itcrowd.repository.PostRepository;
 import org.bson.types.ObjectId;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+
 
 @Service
 public class PostServiceImpl implements PostService {
 
     private final PostRepository postRepository;
+    private MongoOperations mongoOperations;
 
-    public PostServiceImpl(PostRepository postRepository){
+    public PostServiceImpl(PostRepository postRepository, MongoOperations mongoOperations){
         this.postRepository = postRepository;
+        this.mongoOperations = mongoOperations;
     }
 
     @Override
-    public List<Post> getLastPosts() {
-        return this.postRepository.findAll();
+    public List<Post> getRecentPosts(int n) {
+        Pageable lastN = PageRequest.of(0,  n,  Sort.by("createdDate"));
+        return this.postRepository.findAll(lastN).getContent();
+    }
+
+    @Override
+    public List<Post> getPopularPosts(int n) {
+        Pageable lastN = PageRequest.of(0,  n,  Sort.by(Sort.Direction.DESC, "rating"));
+        return this.postRepository.findAll(lastN).getContent();
+    }
+
+    @Override
+    public List<Post> getPostsPaginated(Pageable pageable) {
+        return null;
     }
 
     @Override

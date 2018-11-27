@@ -8,7 +8,7 @@ import { TableModule } from "primeng/table";
 import { AppRoutingModule } from "./app-routing.module";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
-import { CheckboxModule, ChipsModule, DropdownModule, EditorModule } from "primeng/primeng";
+import { CheckboxModule, ChipsModule, DropdownModule, EditorModule, FileUploadModule } from "primeng/primeng";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LoginComponent } from './login/login.component';
 import { BasicAuthInterceptor } from "./shared/helpers/basic-auth.interceptor";
@@ -60,7 +60,8 @@ import { PostFormComponent } from './posts/post-form/post-form.component';
     DropdownModule,
     CheckboxModule,
     EditorModule,
-    ChipsModule
+    ChipsModule,
+    FileUploadModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },

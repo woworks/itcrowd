@@ -11,4 +11,5 @@ export class Post {
   views: number;
   upVotes: number;
   downVotes: number;
+  rating: number;
 }

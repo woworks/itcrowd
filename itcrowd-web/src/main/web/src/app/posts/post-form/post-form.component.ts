@@ -18,6 +18,8 @@ export class PostFormComponent implements OnInit {
   @Input()
   post: Post;
 
+  uploadedFiles: any[] = [];
+
   categories: SelectItem[] = [
     {label: 'Select Category', value: null}
   ];
