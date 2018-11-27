@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Post} from "../../shared/models/post";
+import { PostService } from '../../shared/services/post.service';
 
 @Component({
   selector: 'app-top-post-row',
@@ -9,39 +10,13 @@ import {Post} from "../../shared/models/post";
 export class TopPostRowComponent implements OnInit {
   topPosts: Post[];
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   ngOnInit() {
-    this.topPosts = [
-      {
-        id: '1',
-        title: 'This is the title number One',
-        createdDate: new Date(),
-        modifiedDate: new Date(),
-        body: 'one one one',
-        category: 'CategoryOne',
-        tags: ['one', 'two', 'three'],
-        authorName: 'Admin Administrator',
-        authorUsername: 'admin',
-        views: 0,
-        upVotes: 0,
-        downVotes: 0
-      },
-      {
-        id: '2',
-        title: 'This is the title number Two',
-        createdDate: new Date(),
-        modifiedDate: new Date(),
-        body: 'one one one',
-        category: 'CategoryTwo',
-        tags: ['one', 'two', 'three'],
-        authorName: 'Admin Administrator',
-        authorUsername: 'admin',
-        views: 0,
-        upVotes: 0,
-        downVotes: 0
-      }
-      ];
+    this.postService.getPopular(2).subscribe(data => {
+      console.log('top posts === ', JSON.stringify(data));
+      this.topPosts = data;
+    });
   }
 
 }

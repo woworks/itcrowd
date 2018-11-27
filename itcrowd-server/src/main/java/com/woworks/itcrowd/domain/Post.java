@@ -1,11 +1,14 @@
 package com.woworks.itcrowd.domain;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Getter;
 import lombok.Setter;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -20,6 +23,7 @@ import java.util.List;
 @Setter
 public class Post {
     @Id
+    @JsonSerialize(using = ToStringSerializer.class)
     private ObjectId id;
 
     @NotBlank
@@ -69,5 +73,14 @@ public class Post {
     //user ids voted down
     @Field("downVotes")
     private List<ObjectId> downVotes;
+
+    @Field("ups")
+    private int ups;
+
+    @Field("downs")
+    private int downs;
+
+    @Field("rating")
+    private int rating;
 
 }

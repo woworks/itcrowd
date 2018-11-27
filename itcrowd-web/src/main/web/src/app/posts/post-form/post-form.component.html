@@ -9,7 +9,7 @@
           <label for="category">Category <span class="require">*</span></label>
           <p-dropdown [options]="categories" [(ngModel)]="post.category"
                       placeholder="Select a Category" [style]="{'width':'100%'}" id="category" name="category"
-                      class="form-control"></p-dropdown>
+                      ></p-dropdown>
         </div>
 
         <div class="form-group">
@@ -18,15 +18,18 @@
         </div>
 
         <div class="form-group">
-          <label for="body">Post body</label>
-          <!--<textarea rows="5" class="form-control" id="body" name="body" ></textarea>-->
+          <label for="body">Post body <span class="require">*</span></label>
           <p-editor [(ngModel)]="post.body" name="body" id="body" [style]="{'height':'320px'}" ></p-editor>
         </div>
 
-        <div class="form-group has-error">
+        <div class="form-group">
+          <label for="tags">Main image <small>(Will be displayed on top of the page and on the post card)</small></label>
+          <p-fileUpload name="uploadedFiles[]" url="http://localhost:8080/api/files/upload " accept="image/*" auto="auto"></p-fileUpload>
+        </div>
+
+        <div class="form-group">
           <label for="tags">Tags <small>(Write tag and hit 'Enter')</small></label>
           <p-chips [(ngModel)]="post.tags" id="tags" name="tags"></p-chips>
-<!--          <span class="help-block">Field not entered!</span>-->
         </div>
 
         <div class="form-group">

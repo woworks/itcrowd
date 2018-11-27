@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { environment } from "../../../environments/environment";
 import { Post } from "../models/post";
@@ -19,6 +19,18 @@ export class PostService {
   getAll(): Observable<Post[]> {
     return this.httpClient
       .get<Post[]>(`${this.url}/${this.endpoint}`);
+  }
+
+  getRecent(size: number): Observable<Post[]> {
+    const options = size ? {params: new HttpParams().set('size', size.toString())} : {};
+    return this.httpClient
+      .get<Post[]>(`${this.url}/${this.endpoint}/recent`, options);
+  }
+
+  getPopular(size: number): Observable<Post[]> {
+    const options = size ? {params: new HttpParams().set('size', size.toString())} : {};
+    return this.httpClient
+      .get<Post[]>(`${this.url}/${this.endpoint}/popular`, options);
   }
 
   getById(id: String): Observable<Post> {
