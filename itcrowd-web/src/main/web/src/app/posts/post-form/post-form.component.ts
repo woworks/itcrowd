@@ -6,6 +6,7 @@ import { SelectItem } from "primeng/api";
 import { PostService } from "../../shared/services/post.service";
 import { Router } from "@angular/router";
 import { CategoryService } from '../../shared/services/category.service';
+import { FileService } from "../../shared/services/file.service";
 
 
 @Component({
@@ -24,7 +25,8 @@ export class PostFormComponent implements OnInit {
     {label: 'Select Category', value: null}
   ];
 
-  constructor(private postService: PostService, private categoryService: CategoryService, private router: Router) {
+  constructor(private postService: PostService, private categoryService: CategoryService, private router: Router,
+              private fileService: FileService) {
   }
 
   ngOnInit() {
@@ -45,6 +47,13 @@ export class PostFormComponent implements OnInit {
     this.postService.save(this.post).subscribe(data => {
       console.log('Post was saved: id = ', data.id);
       this.router.navigate(['/']);
+    });
+  }
+
+  fileUploader(event) {
+    event.files.forEach(file => {
+      console.log('file = ', JSON.stringify(file));
+      this.fileService.upload(file).subscribe(data => console.log('reply from upload = ', JSON.stringify(data)));
     });
   }
 }

@@ -7,9 +7,8 @@
 
         <div class="form-group">
           <label for="category">Category <span class="require">*</span></label>
-          <p-dropdown [options]="categories" [(ngModel)]="post.category"
-                      placeholder="Select a Category" [style]="{'width':'100%'}" id="category" name="category"
-                      ></p-dropdown>
+          <p-dropdown [options]="categories" [(ngModel)]="post.category" placeholder="Select a Category"
+                      [style]="{'width':'100%'}" id="category" name="category"></p-dropdown>
         </div>
 
         <div class="form-group">
@@ -24,7 +23,7 @@
 
         <div class="form-group">
           <label for="tags">Main image <small>(Will be displayed on top of the page and on the post card)</small></label>
-          <p-fileUpload name="uploadedFiles[]" url="http://localhost:8080/api/files/upload " accept="image/*" auto="auto"></p-fileUpload>
+          <p-fileUpload name="uploadedFiles[]" url="http://localhost:8080/api/files/upload" customUpload="true" (uploadHandler)="fileUploader($event)" accept="image/*"></p-fileUpload>
         </div>
 
         <div class="form-group">

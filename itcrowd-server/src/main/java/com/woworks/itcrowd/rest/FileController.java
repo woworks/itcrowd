@@ -34,7 +34,7 @@ public class FileController {
         return ResponseEntity.ok("File was uploaded");
     }*/
 
-    @PostMapping("api/files/upload")
+    @PostMapping(value = "api/files/upload", consumes = "multipart/form-data")
     public ResponseEntity<String> handleFileUpload(@RequestParam("file") MultipartFile file) {
         String message = "";
         try {
