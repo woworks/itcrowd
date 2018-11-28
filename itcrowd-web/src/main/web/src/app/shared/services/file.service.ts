@@ -16,7 +16,6 @@ export class FileService {
 
   upload(file: File): Observable<Object> {
     console.log('file to save = ', JSON.stringify(file.name));
-    // this.http is the injected HttpClient
     const uploadData = new FormData();
     uploadData.append('file', file, file.name);
     return this.httpClient.post(`${this.url}/${this.endpoint}/upload`, uploadData);

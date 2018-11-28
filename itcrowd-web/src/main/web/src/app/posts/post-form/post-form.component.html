@@ -23,7 +23,7 @@
 
         <div class="form-group">
           <label for="tags">Main image <small>(Will be displayed on top of the page and on the post card)</small></label>
-          <p-fileUpload name="uploadedFiles[]" url="http://localhost:8080/api/files/upload" customUpload="true" (uploadHandler)="fileUploader($event)" accept="image/*"></p-fileUpload>
+          <p-fileUpload name="uploadedFiles[]" url="uploadURL" auto="auto" customUpload="true" (uploadHandler)="fileUploader($event)" accept="image/*"></p-fileUpload>
         </div>
 
         <div class="form-group">

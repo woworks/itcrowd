@@ -7,6 +7,7 @@ import { PostService } from "../../shared/services/post.service";
 import { Router } from "@angular/router";
 import { CategoryService } from '../../shared/services/category.service';
 import { FileService } from "../../shared/services/file.service";
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -19,7 +20,10 @@ export class PostFormComponent implements OnInit {
   @Input()
   post: Post;
 
+  uploadURL = environment.api + '/files/upload';
   uploadedFiles: any[] = [];
+
+
 
   categories: SelectItem[] = [
     {label: 'Select Category', value: null}
