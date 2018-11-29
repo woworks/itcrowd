@@ -7,8 +7,11 @@
 
         <div class="form-group">
           <label for="category">Category <span class="require">*</span></label>
-          <p-dropdown [options]="categories" [(ngModel)]="post.category" placeholder="Select a Category"
-                      [style]="{'width':'100%'}" id="category" name="category"></p-dropdown>
+          <p-dropdown [options]="categories" [(ngModel)]="selectedCategory"
+                      placeholder="Select a Category" filter="true"
+                      [style]="{'width':'100%'}"
+                      id="category" name="category"
+                      (onChange)="bindCategory($event)"></p-dropdown>
         </div>
 
         <div class="form-group">
@@ -22,8 +25,12 @@
         </div>
 
         <div class="form-group">
+          <label for="tags">Current image <small>(will be replaced if you upload new image)</small></label>
+          <img src="{{imageURL}}" height="100px"/>
+        </div>
+        <div class="form-group">
           <label for="tags">Main image <small>(Will be displayed on top of the page and on the post card)</small></label>
-          <p-fileUpload name="uploadedFiles[]" url="uploadURL" auto="auto" customUpload="true" (uploadHandler)="fileUploader($event)" accept="image/*"></p-fileUpload>
+          <p-fileUpload name="file" url="uploadURL" auto="auto" customUpload="true" (uploadHandler)="fileUploader($event)" accept="image/*"></p-fileUpload>
         </div>
 
         <div class="form-group">
@@ -35,11 +42,13 @@
           <p><span class="require">*</span> - required fields</p>
         </div>
 
+        <input type="hidden" [(ngModel)]="post.imageFileName" name="imageFileName"/>
+
         <div class="form-group">
           <button type="submit" class="btn btn-primary" (click)="save()">
-            Create
+            Save
           </button>
-          <button class="btn btn-default">
+          <button class="btn btn-default" (click)="cancel()">
             Cancel
           </button>
         </div>

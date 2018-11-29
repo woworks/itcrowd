@@ -1,10 +1,10 @@
 <!-- post -->
 <div class="col-md-6">
   <div class="post post-thumb">
-    <a class="post-img" href="/posts/{{post.id}}"><img src="assets/img/post-1.jpg" alt=""></a>
+    <a class="post-img" href="/posts/{{post.id}}"><img src="{{imagesLocation}}/{{post.imageFileName}}" alt=""></a>
     <div class="post-body">
       <div class="post-meta">
-        <a class="post-category cat-1" href="category.html">{{post.category}}</a>
+        <a class="post-category cat-1" href="/category/{{post.categoryCode}}">{{post.category}}</a>
         <span class="post-date">{{post.createdDate | date: 'MMMM dd, yyyy'}}</span>
       </div>
       <h3 class="post-title"><a href="/posts/{{post.id}}">{{post.title}}</a></h3>

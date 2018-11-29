@@ -17,6 +17,6 @@ public interface PostService {
 
     Post save(Post post);
 
-    Optional<Post> getPostById(ObjectId id);
+    Optional<Post> getPostById(String id);
 
 }

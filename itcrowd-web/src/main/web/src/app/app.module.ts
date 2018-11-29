@@ -27,6 +27,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ViewPostComponent } from './posts/view-post/view-post.component';
 import { NewPostComponent } from './posts/new-post/new-post.component';
 import { PostFormComponent } from './posts/post-form/post-form.component';
+import { EditPostComponent } from './posts/edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { PostFormComponent } from './posts/post-form/post-form.component';
     SignupComponent,
     ViewPostComponent,
     NewPostComponent,
-    PostFormComponent
+    PostFormComponent,
+    EditPostComponent
   ],
   imports: [
     AppRoutingModule,

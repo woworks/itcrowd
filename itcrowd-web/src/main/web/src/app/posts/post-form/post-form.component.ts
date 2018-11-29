@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { EditorModule } from 'primeng/editor';
-import { ChipsModule } from 'primeng/chips';
 import { Post } from "../../shared/models/post";
 import { SelectItem } from "primeng/api";
 import { PostService } from "../../shared/services/post.service";
@@ -8,7 +6,12 @@ import { Router } from "@angular/router";
 import { CategoryService } from '../../shared/services/category.service';
 import { FileService } from "../../shared/services/file.service";
 import { environment } from '../../../environments/environment';
+import { Location } from '@angular/common';
 
+interface City {
+  name: string;
+  code: string;
+}
 
 @Component({
   selector: 'app-post-form',
@@ -20,30 +23,46 @@ export class PostFormComponent implements OnInit {
   @Input()
   post: Post;
 
-  uploadURL = environment.api + '/files/upload';
-  uploadedFiles: any[] = [];
+  imageURL: string;
 
-
-
+  selectedCategory: SelectItem;
   categories: SelectItem[] = [
     {label: 'Select Category', value: null}
   ];
 
+  uploadURL = environment.api + '/files/upload';
+  uploadedFiles: any[] = [];
+
+
+  cities1: SelectItem[];
+  selectedCity1: City;
+
   constructor(private postService: PostService, private categoryService: CategoryService, private router: Router,
-              private fileService: FileService) {
+              private fileService: FileService, private location: Location) {
   }
 
   ngOnInit() {
-    console.log('post = ', this.post);
+
     if (!this.post) {
       this.post = new Post();
       this.post.id = null;
-    }
-
+     }
 
     this.categoryService.getAll().subscribe(data => {
-      data.forEach(cat => this.categories.push({label: cat.name, value: cat.code}));
+
+      let selected: number = 0;
+      data.forEach((cat, num) => {
+        this.categories.push({label: cat.name, value: cat});
+        if (this.post.categoryCode == cat.code){
+          selected = num;
+        }
+      });
+
+      this.selectedCategory = this.categories[selected + 1].value;
+      this.imageURL = encodeURI(environment.server + 'images/' + this.post.imageFileName);
     });
+
+
   }
 
   save() {
@@ -57,7 +76,22 @@ export class PostFormComponent implements OnInit {
   fileUploader(event) {
     event.files.forEach(file => {
       console.log('file = ', JSON.stringify(file));
-      this.fileService.upload(file).subscribe(data => console.log('reply from upload = ', JSON.stringify(data)));
+      this.fileService.upload(file).subscribe(
+        filename => {
+          console.log('reply from upload: filename = ', filename);
+          this.post.imageFileName = filename;
+        }
+      );
     });
+  }
+
+  bindCategory($event: any) {
+    let category = $event.value;
+    this.post.category = category.name;
+    this.post.categoryCode = category.code;
+  }
+
+  cancel() {
+    this.location.back();
   }
 }

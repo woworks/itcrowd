@@ -14,7 +14,6 @@ export class TopPostRowComponent implements OnInit {
 
   ngOnInit() {
     this.postService.getPopular(2).subscribe(data => {
-      console.log('top posts === ', JSON.stringify(data));
       this.topPosts = data;
     });
   }

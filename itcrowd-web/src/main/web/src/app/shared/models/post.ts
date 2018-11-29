@@ -4,7 +4,9 @@ export class Post {
   body: string;
   createdDate: Date;
   modifiedDate: Date;
+  categoryCode: string;
   category: string;
+  imageFileName: string;
   tags: string[];
   authorName: string;
   authorUsername: string;
