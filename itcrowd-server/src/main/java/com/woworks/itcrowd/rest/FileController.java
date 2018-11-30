@@ -18,7 +18,7 @@ public class FileController {
         this.fileService = fileService;
     }
 
-    @PostMapping(value = "api/files/upload", consumes = "multipart/form-data")
+    @PostMapping(value = "/api/files/upload", consumes = "multipart/form-data")
     public ResponseEntity<String> handleFileUpload(@RequestParam("file") MultipartFile file) {
         try {
             this.fileService.store(file);

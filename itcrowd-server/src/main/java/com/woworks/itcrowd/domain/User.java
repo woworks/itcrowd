@@ -3,6 +3,7 @@ package com.woworks.itcrowd.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -16,6 +17,7 @@ import java.time.LocalDate;
 @Document(collection="users")
 @Getter
 @Setter
+@ToString
 public class User {
 
     @Id

@@ -1,8 +1,7 @@
 package com.woworks.itcrowd.service;
 
 import com.woworks.itcrowd.domain.Post;
-import com.woworks.itcrowd.repository.PostRepository;
-import org.bson.types.ObjectId;
+import com.woworks.itcrowd.repository.PostsRepository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -16,10 +15,10 @@ import java.util.Optional;
 @Service
 public class PostServiceImpl implements PostService {
 
-    private final PostRepository postRepository;
+    private final PostsRepository postRepository;
     private MongoOperations mongoOperations;
 
-    public PostServiceImpl(PostRepository postRepository, MongoOperations mongoOperations){
+    public PostServiceImpl(PostsRepository postRepository, MongoOperations mongoOperations){
         this.postRepository = postRepository;
         this.mongoOperations = mongoOperations;
     }

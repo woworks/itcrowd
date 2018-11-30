@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { TableModule } from "primeng/table";
 import { AppRoutingModule } from "./app-routing.module";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CheckboxModule, ChipsModule, DropdownModule, EditorModule, FileUploadModule } from "primeng/primeng";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LoginComponent } from './login/login.component';
@@ -53,6 +53,7 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     //primeng modules
     TableModule,
     DropdownModule,

@@ -22,22 +22,22 @@ public class PostController {
         this.postService = postService;
     }
 
-    @GetMapping("api/posts/recent")
+    @GetMapping("/api/posts/recent")
     public List<Post> getRecentPosts(@RequestParam int size) {
          return postService.getRecentPosts(size);
     }
 
-    @GetMapping("api/posts/popular")
+    @GetMapping("/api/posts/popular")
     public List<Post> getPopularPosts(@RequestParam int size) {
         return postService.getPopularPosts(size);
     }
 
-    @GetMapping("api/posts")
+    @GetMapping("/api/posts")
     public List<Post> listPosts(Pageable pageable) {
         return postService.getPostsPaginated(pageable);
     }
 
-    @GetMapping("api/posts/{id}")
+    @GetMapping("/api/posts/{id}")
     public ResponseEntity<Post> getPost(@PathVariable String id) {
         Optional<Post> postOptional = postService.getPostById(id);
         if (postOptional.isPresent()){
@@ -48,7 +48,7 @@ public class PostController {
     }
 
 
-    @PostMapping("api/posts")
+    @PostMapping("/api/posts")
     public Post savePost(@RequestBody Post post) {
             return this.postService.save(post);
     }

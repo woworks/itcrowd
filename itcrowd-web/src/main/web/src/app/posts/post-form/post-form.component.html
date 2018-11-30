@@ -24,7 +24,7 @@
           <p-editor [(ngModel)]="post.body" name="body" id="body" [style]="{'height':'320px'}" ></p-editor>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" [hidden]="!hasOldImage()">
           <label for="tags">Current image <small>(will be replaced if you upload new image)</small></label>
           <img src="{{imageURL}}" height="100px"/>
         </div>

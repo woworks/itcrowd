@@ -59,7 +59,10 @@ export class PostFormComponent implements OnInit {
       });
 
       this.selectedCategory = this.categories[selected + 1].value;
-      this.imageURL = encodeURI(environment.server + 'images/' + this.post.imageFileName);
+      if (this.post.imageFileName) {
+        this.imageURL = encodeURI(environment.server + 'images/' + this.post.imageFileName);
+      }
+
     });
 
 
@@ -93,5 +96,9 @@ export class PostFormComponent implements OnInit {
 
   cancel() {
     this.location.back();
+  }
+
+  hasOldImage(){
+    return this.imageURL != null;
   }
 }
