@@ -20,4 +20,7 @@ export class PostCardComponent implements OnInit {
     this.imagesLocation = environment.server + 'images';
   }
 
+  randomColor() {
+    return Math.floor(Math.random() * 4) + 1
+  }
 }

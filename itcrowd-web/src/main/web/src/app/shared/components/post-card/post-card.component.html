@@ -4,7 +4,7 @@
     <a class="post-img" href="/posts/{{post.id}}"><img src="{{imagesLocation}}/{{post.imageFileName}}" alt="{{post.title}}"></a>
     <div class="post-body">
       <div class="post-meta">
-        <a class="post-category cat-{{post.id}}" href="/category/{{post.categoryCode}}">{{post.category}}</a>
+        <a class="post-category cat-{{randomColor()}}" href="/category/{{post.categoryCode}}">{{post.category}}</a>
         <span class="post-date">{{post.createdDate | date: 'MMMM dd, yyyy'}}</span>
       </div>
       <h3 class="post-title"><a href="/posts/{{post.id}}">{{post.title}}</a></h3>

@@ -25,7 +25,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<Post> getRecentPosts(int n) {
-        Pageable lastN = PageRequest.of(0,  n,  Sort.by("createdDate"));
+        Pageable lastN = PageRequest.of(0,  n,  Sort.by(Sort.Direction.DESC, "createdDate"));
         return this.postRepository.findAll(lastN).getContent();
     }
 
